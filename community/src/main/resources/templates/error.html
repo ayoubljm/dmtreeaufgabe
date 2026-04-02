@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Error</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+
+    <div class="nav-left">
+        <span class="logo">Community</span>
+
+        <a href="/">News</a>
+        <a href="/posts">Feedback</a>
+        <a href="/chat">Chat</a>
+    </div>
+
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+    <!-- ERROR CARD -->
+    <div class="card error-card">
+
+        <h2 class="error-title">⚠ Fehler</h2>
+
+        <p class="error-message" th:text="${message}"></p>
+
+        <a href="/" class="back-link">⬅ Zurück</a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

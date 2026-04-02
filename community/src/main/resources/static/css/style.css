@@ -1,0 +1,372 @@
+/* =========================
+   RESET
+========================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #0B1220;
+    color: white;
+}
+
+.create-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.create-form button {
+    align-self: center;
+    margin-top: 20px;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+.container {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+.page-title {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar a {
+    color: #A0AEC0;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.navbar a:hover {
+    color: #F2C94C;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    color: #F2C94C;
+}
+
+.user-info {
+    color: #E5E7EB;
+    font-size: 14px;
+}
+
+/* =========================
+   NAV LINKS
+========================= */
+.nav-link {
+    position: relative;
+    padding: 5px 0;
+    transition: 0.2s;
+}
+
+.nav-link:hover {
+    color: #F2C94C;
+}
+
+.nav-link.active {
+    color: #F2C94C;
+    font-weight: 600;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #F2C94C;
+    transition: 0.2s;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.admin-link {
+    margin-left: 10px;
+    color: #ff4d4d;
+}
+
+.admin-link:hover {
+    color: #ff7a7a;
+}
+
+/* =========================
+   CARDS
+========================= */
+.card {
+    background: linear-gradient(145deg, #111827, #0f172a);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* =========================
+   POSTS
+========================= */
+.post-title a {
+    text-decoration: none;
+    color: #F2C94C;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.post-content {
+    color: #A0AEC0;
+    margin: 10px 0 20px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn {
+    background: #F2C94C;
+    color: black;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+.logout-btn {
+    background: transparent;
+    border: 1px solid #F2C94C;
+    color: #F2C94C;
+}
+
+.logout-btn:hover {
+    background: #F2C94C;
+    color: black;
+}
+
+.btn-danger {
+    background: #ff4d4d;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+.small-btn {
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+/* =========================
+   VOTES
+========================= */
+.vote-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.vote-buttons button {
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+}
+
+.like-btn {
+    background: #F2C94C;
+    color: black;
+}
+
+.dislike-btn {
+    background: #ff4d4d;
+    color: white;
+}
+
+/* =========================
+   INPUTS
+========================= */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #111827;
+    border: 1px solid #333;
+    color: white;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #F2C94C;
+}
+
+textarea {
+    height: 200px;
+    resize: none;
+    overflow-y: auto;
+}
+
+/* =========================
+   SEARCH
+========================= */
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    background: #111827;
+    border-radius: 12px;
+    border: 1px solid #333;
+    overflow: hidden;
+}
+
+.search-wrapper input {
+    border: none;
+    background: transparent;
+    flex: 1;
+    padding: 12px;
+    color: white;
+}
+
+.search-btn {
+    border-radius: 0;
+    padding: 12px 18px;
+}
+
+.search-wrapper:focus-within {
+    border-color: #F2C94C;
+}
+
+/* =========================
+   COMMENTS
+========================= */
+.comment-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.comment-user::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background: #F2C94C;
+    border-radius: 50%;
+}
+
+.comment-time {
+    font-size: 12px;
+    color: #6B7280;
+}
+
+.comment-text {
+    margin-top: 10px;
+    color: #E5E7EB;
+}
+
+/* =========================
+   CHAT
+========================= */
+.chat-box {
+    max-height: 400px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.chat-bubble {
+    background: #1F2937;
+    padding: 10px 15px;
+    border-radius: 12px;
+    max-width: 70%;
+}
+
+/* =========================
+   POPUP
+========================= */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(17, 24, 39, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #F2C94C;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    text-align: center;
+}
+
+/* =========================
+   LINKS
+========================= */
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 14px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    color: #F2C94C;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* =========================
+   NEWS
+========================= */
+
+.news-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.news-image {
+    transition: 0.3s;
+}
+
+.card:hover .news-image {
+    transform: scale(1.03);
+}
+
+

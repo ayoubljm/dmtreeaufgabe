@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <title>Post</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<!-- 🔥 NAVBAR -->
+<div class="navbar">
+
+    <div class="nav-left">
+        <span class="logo">Community</span>
+
+        <a href="/">News</a>
+        <a href="/posts">Feedback</a>
+        <a href="/chat">Chat</a>
+    </div>
+
+    <div class="nav-right">
+
+        <span sec:authorize="!isAuthenticated()">
+            <a href="/login">Login</a>
+        </span>
+
+        <span sec:authorize="isAuthenticated()">
+            <span class="user-info" sec:authentication="name"></span>
+
+            <form th:action="@{/logout}" method="post" style="display:inline;">
+                <button class="btn logout-btn">Logout</button>
+            </form>
+        </span>
+
+    </div>
+
+</div>
+
+<!-- 🔥 CONTENT -->
+<div class="container">
+
+    <!-- POST -->
+    <div class="card">
+
+        <h2 class="post-title" th:text="${post.title}"></h2>
+        <p class="post-content" th:text="${post.content}"></p>
+
+    </div>
+
+    <!-- COMMENTS -->
+    <h3 style="margin-top:30px;">Comments</h3>
+
+    <div th:each="comment : ${comments}" class="card">
+
+        <div class="comment-header">
+            <div class="comment-user">
+                <b th:text="${comment.userEmail}"></b>
+                <span class="comment-time"
+                      th:text="${#temporals.format(comment.timestamp, 'dd.MM.yyyy HH:mm')}">
+            </span>
+            </div>
+        </div>
+
+        <p class="comment-text" th:text="${comment.content}"></p>
+
+        <div class="comment-actions" sec:authorize="hasRole('ADMIN')">
+            <form th:action="@{'/admin/comment/delete/' + ${comment.id}}" method="post">
+                <button class="btn-danger small-btn">Löschen</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- COMMENT FORM -->
+    <div sec:authorize="isAuthenticated()" class="card">
+
+        <h3>Add Comment</h3>
+
+        <form th:action="@{'/post/' + ${post.id} + '/comment'}" method="post">
+            <textarea class="comment-input"
+                      name="content"
+                      placeholder="Schreibe einen Kommentar..."
+                      required></textarea>
+            <br><br>
+            <button class="btn">Kommentieren</button>
+        </form>
+
+    </div>
+
+    <!-- NOT LOGGED IN -->
+    <div sec:authorize="!isAuthenticated()">
+        <p style="color:#A0AEC0;">Bitte loggen Sie sich ein, um zu kommentieren</p>
+    </div>
+
+    <br>
+    <a href="/posts" class="back-link">⬅ Zurück zu Posts</a>
+
+</div>
+
+</body>
+</html>

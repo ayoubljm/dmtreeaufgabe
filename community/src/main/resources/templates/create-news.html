@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Create News</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+
+    <div class="nav-left">
+        <span class="logo">Admin</span>
+
+        <a href="/">News</a>
+        <a href="/posts">Feedback</a>
+        <a href="/chat">Chat</a>
+    </div>
+
+    <div class="nav-right">
+
+        <span sec:authorize="!isAuthenticated()">
+            <a href="/login">Login</a>
+        </span>
+
+        <span sec:authorize="isAuthenticated()">
+            <span class="user-info" sec:authentication="name"></span>
+
+            <form th:action="@{/logout}" method="post" style="display:inline;">
+                <button class="btn logout-btn">Logout</button>
+            </form>
+        </span>
+
+    </div>
+
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+    <h1 class="page-title">News erstellen</h1>
+
+    <!-- FORM -->
+    <div class="card">
+
+        <form method="post" action="/admin/news/create" class="create-form">
+
+            <label>Titel</label>
+            <input type="text" name="title" placeholder="Titel eingeben..." required>
+
+            <label style="margin-top:15px;">Bild URL</label>
+            <input type="text" name="imageUrl" placeholder="https://..." required>
+
+            <label style="margin-top:15px;">Inhalt</label>
+            <textarea name="content" placeholder="News Inhalt schreiben..." required></textarea>
+
+            <button class="btn" style="margin-top:20px;">
+                Erstellen
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- BACK -->
+    <a href="/news" class="back-link">⬅ Zurück zu News</a>
+
+</div>
+
+</body>
+</html>

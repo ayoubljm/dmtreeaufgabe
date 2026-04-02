@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <title>Community</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+
+    <div class="nav-left">
+        <span class="logo">Community</span>
+
+        <a href="/">News</a>
+        <a href="/posts">Feedback</a>
+        <a href="/chat">Chat</a>
+    </div>
+
+    <div class="nav-right">
+
+        <a href="/create">
+            <button class="btn primary-btn">+ Feedback</button>
+        </a>
+
+        <span sec:authorize="isAuthenticated()" class="user-info">
+        <span sec:authentication="name"></span>
+    </span>
+
+        <span sec:authorize="!isAuthenticated()">
+        <a href="/login">Login</a>
+    </span>
+
+        <span sec:authorize="isAuthenticated()">
+        <form th:action="@{/logout}" method="post" style="display:inline;">
+            <button class="btn logout-btn">Logout</button>
+        </form>
+    </span>
+
+    </div>
+
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+    <h1 class="page-title">
+        Feedback & Vorschläge
+    </h1>
+
+    <!-- POPUP -->
+    <div th:if="${param.loginRequired}" class="popup">
+
+        <p>Bitte loggen Sie sich ein, um diese Aktion auszuführen</p>
+
+        <button class="btn"
+                onclick="this.parentElement.style.display='none'">
+            OK
+        </button>
+
+    </div>
+
+    <!-- POSTS -->
+    <div th:if="${posts != null}">
+
+        <div th:each="post : ${posts}" th:if="${post != null}" class="card">
+
+            <h3 class="post-title">
+                <a th:href="@{/post/{id}(id=${post.id})}"
+                   th:text="${post.title}">
+                </a>
+            </h3>
+
+            <p class="post-content" th:text="${post.content}"></p>
+
+            <div class="vote-buttons">
+
+                <form th:action="@{'/post/' + ${post.id} + '/like'}" method="post">
+                    <button type="submit" class="like-btn">
+                        👍 <span th:text="${post.likes}"></span>
+                    </button>
+                </form>
+
+                <form th:action="@{'/post/' + ${post.id} + '/dislike'}" method="post">
+                    <button type="submit" class="dislike-btn">
+                        👎 <span th:text="${post.dislikes}"></span>
+                    </button>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
