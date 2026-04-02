@@ -52,9 +52,7 @@ Eine moderne Community-Plattform mit Feedback-System, News, Chat und Admin-Panel
 
 ## 📁 Projektstruktur
 
-## 📁 Projektstruktur
-
-
+```text
 src/
 └── main/
     ├── java/
@@ -71,7 +69,7 @@ src/
         │   ├── css/          # 🎨 Styles
         │   └── images/       # 🖼️ Bilder
         └── application.properties  # ⚡ Einstellungen
-
+```
 ---
 
 ## ▶️ Installation & Start
