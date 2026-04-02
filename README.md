@@ -71,54 +71,54 @@ src/main/resources
 ## ▶️ Installation & Start
 
 ### 1. Projekt klonen
--git clone https://github.com/DEIN-USERNAME/community-platform.git
+- git clone https://github.com/DEIN-USERNAME/community-platform.git
 
 ### 2. In Projektordner wechseln
-cd community-platform
+- cd community-platform
 
 ### 3. Anwendung starten
--Mit Maven:
+- Mit Maven:
 ./mvnw spring-boot:run
--oder in IntelliJ:
+- oder in IntelliJ:
 ➡ CommunityApplication starten
 
 ## Systemverhalten
 
 Registrierung notwendig für:
--Posts
--Kommentare
+- Posts
+- Kommentare
 
 Chat:
--Nur sichtbar für alle
--Nutzbar nur nach Admin-Freigabe
+- Nur sichtbar für alle
+- Nutzbar nur nach Admin-Freigabe
 
 Admin:
--Zugriff auf Admin Panel
--Kann User verwalten 
--Bilder verwenden
+- Zugriff auf Admin Panel
+- Kann User verwalten 
+- Bilder verwenden
 
 ## Bilder müssen im Ordner liegen:
--src/main/resources/static/images/
-Verwendung im Formular:
--/images/deinBild.jpg
+- src/main/resources/static/images/
+## Verwendung im Formular:
+- /images/deinBild.jpg
 
 ## Design
--Dark Mode UI
--Modernes Card Layout
--Hover-Effekte & Animationen
--Inspiriert von modernen SaaS Plattformen
+- Dark Mode UI
+- Modernes Card Layout
+- Hover-Effekte & Animationen
+- Inspiriert von modernen SaaS Plattformen
 
 ## ToDo / Verbesserungen
- -Mobile Responsive Design
- -Chat (WhatsApp Style)
- -Image Upload (statt URL)
- -Live Updates (WebSockets)
- -Pagination für Posts
+ - Mobile Responsive Design
+ - Chat (WhatsApp Style)
+ - Image Upload (statt URL)
+ - Live Updates (WebSockets)
+ - Pagination für Posts
  
 ## Autor
--Ayoub Lejmi
--Student an THM Gießen
+- Ayoub Lejmi
+- Student an THM Gießen
 
 ## Lizenz
 
-Dieses Projekt dient Lern- und Demonstrationszwecken.
+- Dieses Projekt dient Lern- und Demonstrationszwecken.
