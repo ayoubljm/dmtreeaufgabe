@@ -52,20 +52,26 @@ Eine moderne Community-Plattform mit Feedback-System, News, Chat und Admin-Panel
 
 ## 📁 Projektstruktur
 
-src/main/java/com/dmtree/community
-│
-├── controller
-├── service
-├── repository
-├── model
-├── config
+## 📁 Projektstruktur
 
-src/main/resources
-│
-├── templates → HTML Seiten
-├── static/css → Styles
-├── static/images → Bilder
-└── application.properties
+
+src/
+└── main/
+    ├── java/
+    │   └── com/dmtree/community/
+    │       ├── controller/   # 🎮 Steuerung (MVC Controller)
+    │       ├── service/      # ⚙️ Geschäftslogik
+    │       ├── repository/   # 💾 Datenbankzugriff
+    │       ├── model/        # 📦 Datenmodelle
+    │       └── config/       # 🔧 Konfiguration
+    │
+    └── resources/
+        ├── templates/        # 🌐 HTML (Thymeleaf)
+        ├── static/
+        │   ├── css/          # 🎨 Styles
+        │   └── images/       # 🖼️ Bilder
+        └── application.properties  # ⚡ Einstellungen
+
 ---
 
 ## ▶️ Installation & Start
