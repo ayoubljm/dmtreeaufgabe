@@ -12,6 +12,7 @@ Eine moderne Community-Plattform mit Feedback-System, News, Chat und Admin-Panel
 - Moderne Kartenansicht
 
 ### 💬 Feedback / Posts
+- !!! WICHTIG !!! Die 2 schon vorhandenen Posts sind nur für die Darstellung da, deswegen haben die keine volle Funktionalität ! Um alle Features benutzen zu wollen bitte eigene Posts erstellen !
 - User können Feedback posten
 - Like / Dislike System
 - Sortierung nach Likes
