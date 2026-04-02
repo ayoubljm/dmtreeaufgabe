@@ -32,7 +32,8 @@ public class SecurityConfig {
                                 "/post/**",
                                 "/login",
                                 "/register",
-                                "/css/**"
+                                "/css/**",
+                                "/images/**"
                         ).permitAll()
 
                         // 🔒 nur eingeloggte dürfen posten

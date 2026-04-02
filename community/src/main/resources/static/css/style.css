@@ -369,4 +369,41 @@ textarea {
     transform: scale(1.03);
 }
 
+/* =========================
+   NEWS LAYOUT (🔥 NEU)
+========================= */
+
+.news-card {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* LEFT IMAGE */
+.news-left {
+    flex-shrink: 0;
+}
+
+/* QUADRATISCHES BILD */
+.news-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* RIGHT CONTENT */
+.news-right {
+    flex: 1;
+}
+
+/* TITLE */
+.news-right h2 {
+    margin: 0 0 10px 0;
+}
+
+/* TEXT */
+.news-right p {
+    margin: 0;
+}
 

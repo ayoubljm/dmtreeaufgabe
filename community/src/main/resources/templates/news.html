@@ -51,13 +51,53 @@
     </div>
 
     <!-- NEWS LIST -->
-    <div th:each="n : ${newsList}" class="card">
+    <div th:each="n : ${newsList}" class="card news-card">
 
-        <h2 th:text="${n.title}"></h2>
+        <!-- LEFT: IMAGE -->
+        <div class="news-left">
+            <img th:src="${n.imageUrl}" class="news-image"/>
+        </div>
 
-        <img th:src="${n.imageUrl}" class="news-image"/>
+        <!-- RIGHT: CONTENT -->
+        <div class="news-right">
+            <h2 th:text="${n.title}"></h2>
+            <p class="post-content" th:text="${n.content}"></p>
+        </div>
 
-        <p class="post-content" th:text="${n.content}"></p>
+    </div>
+
+    <!-- 🔥 TEST NEWS (nur zum Design testen) -->
+    <div class="card news-card">
+
+        <div class="news-left">
+            <img src="/images/img.png" class="news-image"/>
+        </div>
+
+        <div class="news-right">
+            <h2>🚀 Neue Community Plattform gestartet</h2>
+
+            <p class="post-content">
+                Unsere neue Community Plattform ist jetzt live! Nutzer können Feedback posten,
+                Beiträge liken und im Chat miteinander kommunizieren. Weitere Features folgen bald.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="card news-card">
+
+        <div class="news-left">
+            <img src="/images/img.png" class="news-image"/>
+        </div>
+
+        <div class="news-right">
+            <h2>💬 Chat Feature erweitert</h2>
+
+            <p class="post-content">
+                Das Chat-System wurde verbessert. Admins können jetzt gezielt User freischalten.
+                In Zukunft planen wir ein WhatsApp-ähnliches Design mit Live-Updates.
+            </p>
+        </div>
 
     </div>
 

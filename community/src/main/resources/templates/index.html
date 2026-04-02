@@ -66,6 +66,59 @@
     <!-- POSTS -->
     <div th:if="${posts != null}">
 
+        <!-- 🔥 TEST POSTS (nur Design testen) -->
+
+        <div class="card">
+
+            <h3 class="post-title">
+                <a href="#">🚀 Neue Feature Idee: Dark Mode verbessern</a>
+            </h3>
+
+            <p class="post-content">
+                Ich fände es super, wenn der Dark Mode noch mehr Kontrast bekommt.
+                Besonders Texte könnten etwas heller sein für bessere Lesbarkeit.
+            </p>
+
+            <div class="vote-buttons">
+
+                <button class="like-btn">
+                    👍 12
+                </button>
+
+                <button class="dislike-btn">
+                    👎 2
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3 class="post-title">
+                <a href="#">💬 Chat sollte Emojis unterstützen</a>
+            </h3>
+
+            <p class="post-content">
+                Der Chat ist schon gut, aber Emojis würden das Ganze viel lebendiger machen 😊
+                Vielleicht auch Reactions wie bei WhatsApp?
+            </p>
+
+            <div class="vote-buttons">
+
+                <button class="like-btn">
+                    👍 25
+                </button>
+
+                <button class="dislike-btn">
+                    👎 1
+                </button>
+
+            </div>
+
+        </div>
+
         <div th:each="post : ${posts}" th:if="${post != null}" class="card">
 
             <h3 class="post-title">
