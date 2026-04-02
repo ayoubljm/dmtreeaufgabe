@@ -86,6 +86,66 @@ src/
 - oder in IntelliJ:
 ➡ CommunityApplication starten
 
+## 🌍 Anwendung starten (Browser)
+
+Nach dem Start:
+
+👉 Öffne im Browser:
+ - http://localhost:8080
+ - 
+👑 Admin Account
+- Email: admin@admin.com
+- Passwort: admin123
+  
+👤 User Account ( Muss registriert werden )
+- Email: user@user.com
+- Passwort: 123456
+
+🧭 Anleitung zur Nutzung
+
+🔹 1. Login
+- Gehe auf Login
+- Melde dich als Admin oder User an
+
+🔹 2. News ansehen
+- Startseite zeigt News
+- Admin kann neue News erstellen
+
+🔹 3. Feedback posten
+- Gehe auf Posts
+- Klicke auf „Feedback erstellen“
+- Schreibe deinen Beitrag
+
+🔹 4. Beiträge bewerten
+- 👍 Like
+- 👎 Dislike
+- Posts werden nach Likes sortiert
+
+🔹 5. Kommentare
+- Öffne einen Post
+- Schreibe einen Kommentar
+- Admin kann Kommentare löschen
+
+🔹 6. Chat nutzen
+👤 Normaler User:
+- Kann Chat sehen
+- Kann nicht schreiben, solange nicht freigeschaltet
+👑 Admin:
+- Gehe zu User managen
+- Suche User per Email
+- Aktiviere Chat-Zugriff
+
+➡ Danach kann der User chatten
+
+🔹 7. Admin Funktionen
+
+Als Admin kannst du:
+
+- User für Chat freischalten
+- User entfernen
+- News erstellen
+- Kommentare löschen
+
 ## Systemverhalten
 
 Registrierung notwendig für:
