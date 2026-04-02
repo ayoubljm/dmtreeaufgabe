@@ -122,6 +122,3 @@ Student an THM Gießen
 ## Lizenz
 
 Dieses Projekt dient Lern- und Demonstrationszwecken.
-
-
-## 📁 Projektstruktur
