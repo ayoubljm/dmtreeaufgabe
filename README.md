@@ -127,10 +127,10 @@ Nach dem Start:
 - Admin kann Kommentare löschen
 
 🔹 6. Chat nutzen
-👤 Normaler User:
+- 👤 Normaler User:
 - Kann Chat sehen
 - Kann nicht schreiben, solange nicht freigeschaltet
-👑 Admin:
+- 👑 Admin:
 - Gehe zu User managen
 - Suche User per Email
 - Aktiviere Chat-Zugriff
